@@ -1,4 +1,4 @@
-//Author: Filippo Venturini
+//Author: Filippo Venturini || Davide Di Marco || Riccardo Leonelli
 //Date (DeadLine): 20191208
 //Notes: Esercizio 2
 #include <stdio.h>
@@ -9,20 +9,20 @@ int contChiamata = 0; //Contatore per le chiamate alla funzione
 int fattoriale = 0;
 long int Fattoriale(long int n) {
 	contChiamata++; //Incrementa il contatore
-	printf("Numero chiamata: %d | Valore di n: %d|\n", contChiamata, n);
+	printf("Numero chiamata: %d | Valore di n: %ld|\n", contChiamata, n);
 	if (n <= 1) {//Caso base in cui n <= 1
 		return 1;
 	}
 	for (int i = 0; i < contChiamata; i++) { //Ciclo che aggiunge una tabulazione per ogni chiamata alla funzione
 		printf("\t");
 	}
-	
+
 	fattoriale = n*Fattoriale(n - 1); //Richiama con la ricorsione la funzione
 
 	for (int i = 0; i < contChiamata; i++) { //Ciclo che toglie una tabulazione per ogni chiamata alla funzione
 		printf("\t");
 	}
-	printf("| !%d = %d |\n", n, fattoriale);
+	printf("| !%ld = %d |\n", n, fattoriale);
 	contChiamata--; //Decrementa il contatore
 	return fattoriale; //Ricorsione
 }
